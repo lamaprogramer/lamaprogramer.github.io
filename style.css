@@ -1,0 +1,8 @@
+#nav * {
+    display: inline-block;
+    vertical-align: center;
+}
+
+#misc {
+    float: right
+}
