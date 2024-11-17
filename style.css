@@ -17,11 +17,15 @@
 }
 
 .fa-moon {
-    color: purple;
+    color: rgb(206, 69, 206);
 }
 
 .fa-sun {
-    color: orange;
+    color: rgb(206, 170, 69);
+}
+
+.card-header-title {
+
 }
 
 
@@ -32,25 +36,23 @@
     box-shadow: var(--bulma-shadow);
 }
 
-#misc {
+#left-nav, #right-nav {
     display: flex;
     align-items: center;
+}
+
+#left-nav > * {
+    margin-right: 1em;
+}
+
+#right-nav {
     margin-left: auto;
 }
 
-#misc > * {
+#right-nav > * {
     margin-left: 1em;
 }
 
 #about-me-header {
     text-align: center;
-}
-
-
-#about-me {
-    
-}
-
-.is-three-quarters {
-    
 }
