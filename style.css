@@ -1,12 +1,35 @@
-/* #nav > * {
-    display: inline-block;
-    vertical-align: center;
-} */
+[data-theme=dark],
+.theme-dark {
+    --bulma-scheme-main-l: 16%;
+    --bulma-scheme-main-bis-l: 18% 	
+    --bulma-scheme-main-ter-l: 20%; 	
+    --bulma-background-l: 19%; 	
+    --bulma-border-weak-l: 26%; 	
+    --bulma-border-l: 29%; 	
+    --bulma-text-weak-l: 58%; 	
+    --bulma-text-l: 76%; 	
+    --bulma-text-strong-l: 98%; 	
+    --bulma-text-title-l: 100%;
+}
+
+.icon-button {
+    border: none;
+}
+
+.fa-moon {
+    color: purple;
+}
+
+.fa-sun {
+    color: orange;
+}
+
 
 #nav {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid grey;
+    /* border-bottom: 1px solid grey; */
+    box-shadow: var(--bulma-shadow);
 }
 
 #misc {
@@ -17,4 +40,17 @@
 
 #misc > * {
     margin-left: 1em;
+}
+
+#about-me-header {
+    text-align: center;
+}
+
+
+#about-me {
+    
+}
+
+.is-three-quarters {
+    
 }

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html class="theme-light">
+<html data-theme="light">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Portfolio</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"/>
-        <link rel="stylesheet" href="./css/fontawesome.css"/>
-        <link rel="stylesheet" href="./css/brands.css"/>
-        <link rel="stylesheet" href="./css/solid.css"/>
+        <link rel="stylesheet" href="./assets/fontawesome/css/fontawesome.css"/>
+        <link rel="stylesheet" href="./assets/fontawesome/css/brands.css"/>
+        <link rel="stylesheet" href="./assets/fontawesome/css/solid.css"/>
         <link rel="stylesheet" href="./style.css"/>
         
     </head>
@@ -17,16 +17,77 @@
                 <h1 class="title">William Allen Kinsey Jr.</h1>
             </div>
             <div id="misc">
-                <button class="button is-white">
+                <button class="button icon-button">
+                    <span class="icon is-medium">
+                        <i class="fas fa-2x fa fa-moon"></i>
+                    </span>
+                </button>
+                <a class="button icon-button" href="https://github.com/lamaprogramer" target="_blank">
                     <span class="icon is-medium">
                         <i class="fas fa-2x fa-brands fa-github"></i>
                     </span>
-                </button>
+                </a>
             </div>
         </header>
-        <section class="section" id="aboutme">
-
+        <section class="section is-medium" id="about-me">
+            <div class="columns">
+                <div class="column"></div>
+                <div class="column is-three-quarters" id="about-me-content">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h1 class="title is-1" id="about-me-header">About Me</h1>
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="card">
+                                            <div class="card-image">
+                                                <figure class="image">
+                                                    <img id="fullbody" src="./assets/images/full_body.png" alt="Full body photo of myself."/>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="card">
+                                            <div class="card-content">
+                                                <div class="content">
+                                                    <p>
+                                                        This is a paragraph of information that will describe who I am and what I plan to learn.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column"></div>
+            </div>
         </section>
-        <script src="./script.js"></script>
+
+        <section class="section is-small" id="my-skills">
+            <div class="columns">
+                <div class="column"></div>
+                <div class="column is-three-quarters" id="my-skills-content">
+                    <h1 class="title is-1" id="my-skills-header">My Skills</h1>
+                    
+                </div>
+                <div class="column"></div>
+            </div>
+        </section>
+
+        <section class="section is-small" id="my-portfolio">
+            <div class="columns">
+                <div class="column"></div>
+                <div class="column is-three-quarters" id="my-portfolio-content">
+                    <h1 class="title is-1" id="my-portfolio-header">Portfolio</h1>
+                    
+                </div>
+                <div class="column"></div>
+            </div>
+        </section>
+        <script src="./scripts/site_theme.js"></script>
     </body>
 </html>
