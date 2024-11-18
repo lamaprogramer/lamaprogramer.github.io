@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="./assets/fontawesome/css/brands.css"/>
         <link rel="stylesheet" href="./assets/fontawesome/css/solid.css"/>
         <link rel="stylesheet" href="./style.css"/>
-        
     </head>
     <body>
         <header class="p-5" id="nav">
@@ -22,11 +21,47 @@
                 <h1 class="title">William Allen Kinsey Jr.</h1>
             </div>
             <div id="right-nav">
-                <button class="button icon-button">
-                    <span class="icon is-medium">
-                        <i class="fas fa-2x fa fa-moon"></i>
-                    </span>
-                </button>
+
+                <div class="dropdown is-active is-right">
+                    <div class="dropdown-trigger">
+                        <button class="button icon-button" aria-haspopup="true" aria-controls="theme-dropdown">
+                            <span class="icon is-medium">
+                                <i class="fas fa-2x fa fa-sun" id="theme-indicator"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="theme-dropdown" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <button class="button" id="light-theme-toggle">
+                                    <span>Light</span>
+                                    <span class="icon is-medium">
+                                        <i class="fa fa-sun"></i>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div class="dropdown-item">
+                                <button class="button" id="dark-theme-toggle">
+                                    <span>Dark</span>
+                                    <span class="icon is-medium">
+                                        <i class="fa fa-moon"></i>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div class="dropdown-item">
+                                <button class="button" id="system-theme-toggle">
+                                    <span>System</span>
+                                    <span class="icon is-medium">
+                                        <i class="fa fa-computer"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <a class="button icon-button" href="https://github.com/lamaprogramer" target="_blank">
                     <span class="icon is-medium">
                         <i class="fas fa-2x fa-brands fa-github"></i>
@@ -84,7 +119,7 @@
                         <div class="card-content">
                             <div class="content">
                                 <h1 class="title is-size-3" id="my-skills-header">Programming Languages</h1>
-                                <div class="grid is-col-min-15">
+                                <div class="grid is-col-min-12">
                                     <div class="cell">
                                         <div class="card">
                                             <header class="card-header">
@@ -123,7 +158,7 @@
                                     </div>
                                 </div>
                                 <h1 class="title is-size-3" id="my-skills-header">Web Technology</h1>
-                                <div class="grid is-col-min-15">
+                                <div class="grid is-col-min-12">
                                     <div class="cell">
                                         <div class="card">
                                             <header class="card-header">
@@ -183,6 +218,7 @@
                 <div class="column"></div>
             </div>
         </section>
+        <script src="./scripts/bulma_component_impl.js"></script>
         <script src="./scripts/site_theme.js"></script>
     </body>
 </html>

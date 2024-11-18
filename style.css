@@ -24,8 +24,8 @@
     color: rgb(206, 170, 69);
 }
 
-.card-header-title {
-
+.dropdown-item > * {
+    width: 100%;
 }
 
 
