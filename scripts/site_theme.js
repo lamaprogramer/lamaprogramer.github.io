@@ -15,7 +15,7 @@ function storePreferedTheme(theme) {
 
 function getPreferedTheme() {
     let preferedTheme = localStorage.getItem("theme");
-    return preferedTheme != "undefined" ? preferedTheme : getSystemTheme();
+    return (preferedTheme && preferedTheme != "undefined") ? preferedTheme : getSystemTheme();
 }
 
 function setDefaultTheme() {
@@ -32,9 +32,9 @@ function setTheme(newTheme) {
     storePreferedTheme(newTheme);
 }
 
-window.onload = (e) => {
+window.addEventListener("load", (e) => {
     setDefaultTheme();
-};
+});
 
 const lightModeToggle = document.querySelector("#light-theme-toggle")
 const darkModeToggle = document.querySelector("#dark-theme-toggle")

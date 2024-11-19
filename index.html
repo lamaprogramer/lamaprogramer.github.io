@@ -22,9 +22,9 @@
             </div>
             <div id="right-nav">
 
-                <div class="dropdown is-active is-right">
+                <div class="dropdown is-right">
                     <div class="dropdown-trigger">
-                        <button class="button icon-button" aria-haspopup="true" aria-controls="theme-dropdown">
+                        <button class="button icon-button is-sun" aria-haspopup="true" aria-controls="theme-dropdown">
                             <span class="icon is-medium">
                                 <i class="fas fa-2x fa fa-sun" id="theme-indicator"></i>
                             </span>
@@ -33,7 +33,7 @@
                     <div class="dropdown-menu" id="theme-dropdown" role="menu">
                         <div class="dropdown-content">
                             <div class="dropdown-item">
-                                <button class="button" id="light-theme-toggle">
+                                <button class="button is-fullwidth" id="light-theme-toggle">
                                     <span>Light</span>
                                     <span class="icon is-medium">
                                         <i class="fa fa-sun"></i>
@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="dropdown-item">
-                                <button class="button" id="dark-theme-toggle">
+                                <button class="button is-fullwidth" id="dark-theme-toggle">
                                     <span>Dark</span>
                                     <span class="icon is-medium">
                                         <i class="fa fa-moon"></i>
@@ -51,7 +51,7 @@
                             </div>
 
                             <div class="dropdown-item">
-                                <button class="button" id="system-theme-toggle">
+                                <button class="button is-fullwidth" id="system-theme-toggle">
                                     <span>System</span>
                                     <span class="icon is-medium">
                                         <i class="fa fa-computer"></i>
@@ -208,9 +208,80 @@
                 <div class="column"></div>
                 <div class="column is-three-quarters" id="my-portfolio-content">
                     <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title is-centered is-size-1">My Portfolio</p>
+                        </header>
                         <div class="card-content">
                             <div class="content">
-                                <h1 class="title is-1" id="my-portfolio-header">My Portfolio</h1>
+                                
+
+                                <div class="carousel">
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <header class="card-header">
+                                                <p class="card-header-title is-size-3">Card 1</p>
+                                            </header>
+                                            <div class="card-content">
+                                                <div class="content">
+                                                    <p>This is a test description.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <header class="card-header">
+                                                <p class="card-header-title is-size-3">Card 2</p>
+                                            </header>
+                                            <div class="card-content">
+                                                <div class="content">
+                                                    <p>This is a test description.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item" background>
+                                        <div class="card">
+                                            <header class="card-header">
+                                                <p class="card-header-title is-size-3">Card 3</p>
+                                            </header>
+                                            <div class="card-content">
+                                                <div class="content">
+                                                    <p>This is a test description.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item" active>
+                                        <div class="card">
+                                            <header class="card-header">
+                                                <p class="card-header-title is-size-3">Card 4</p>
+                                            </header>
+                                            <div class="card-content">
+                                                <div class="content">
+                                                    <p>This is a test description.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item" background>
+                                        <div class="card">
+                                            <header class="card-header">
+                                                <p class="card-header-title is-size-3">Card 5</p>
+                                            </header>
+                                            <div class="card-content">
+                                                <div class="content">
+                                                    <p>This is a test description.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -219,6 +290,7 @@
             </div>
         </section>
         <script src="./scripts/bulma_component_impl.js"></script>
+        <script src="./scripts/carousel_impl.js"></script>
         <script src="./scripts/site_theme.js"></script>
     </body>
 </html>

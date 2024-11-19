@@ -1,3 +1,9 @@
+:root {
+    --button-sun-h: 44deg;
+    --button-sun-s: 58%;
+    --button-sun-l: 54%;
+}
+
 [data-theme=dark],
 .theme-dark {
     --bulma-scheme-main-l: 16%;
@@ -16,18 +22,37 @@
     border: none;
 }
 
+.colored {
+    --theme-color: hsl(300, 58%, 54%);
+}
+
 .fa-moon {
-    color: rgb(206, 69, 206);
+    color: rgb(206, 70, 206);
 }
 
 .fa-sun {
-    color: rgb(206, 170, 69);
+    color: rgb(206, 169, 70);
 }
 
-.dropdown-item > * {
+.carousel {
+    display: inline-flex;
+    justify-content: center;
     width: 100%;
 }
 
+.carousel-item:not([active]), .carousel-item:not([background]) {
+    display: none;
+}
+
+.carousel-item[active] {
+    display: block;
+}
+
+.carousel-item[background] {
+    display: block;
+    opacity: 75%;
+    scale: 75%;
+}
 
 #nav {
     display: flex;
