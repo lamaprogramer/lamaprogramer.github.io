@@ -1,10 +1,5 @@
-function findPreviousCarouselItem(item) {
-    if (item.nextElementSibling && item.nextElementSibling.hasAttribute("active")) {
-        return item.nextElementSibling;
-    } else if (item.previousElementSibling && item.previousElementSibling.hasAttribute("active")) {
-        return item.previousElementSibling;
-    }
-    return null;
+function findCurrentCarouselItem(item) {
+    return item.parentElement.querySelector('[active]');
 }
 
 function deselectCarouselItem(item) {
@@ -25,23 +20,47 @@ function selectCarouselItem(item) {
     if (next) item.nextElementSibling.setAttribute("background", true);
 }
 
-window.addEventListener("load",  (e) => {
+window.addEventListener("load", (e) => {
     const carousels = document.querySelectorAll(".carousel");
 
     carousels.forEach((carousel) => {
-        let items = carousel.querySelectorAll(".carousel-item");
+        let content = carousel.querySelector(".carousel-content");
+        let items = content.querySelectorAll(".carousel-item");
 
         items.forEach((item) => {
             item.addEventListener("click", (e) => {
                 e.stopPropagation();
+                let previousItem = findCurrentCarouselItem(item);
 
-                let previousItem = findPreviousCarouselItem(item);
                 if (previousItem) {
                     deselectCarouselItem(previousItem);
                     selectCarouselItem(item);
                 }
 
             })
-        })
+        });
+
+        let rightButton = carousel.querySelector(".carousel-scroll-right");
+        let leftButton = carousel.querySelector(".carousel-scroll-left");
+
+        rightButton.addEventListener("click", (e) => {
+            let current = content.querySelector("[active]");
+            let next = current.nextElementSibling;
+
+            if (next) {
+                deselectCarouselItem(current);
+                selectCarouselItem(next);
+            }
+        });
+
+        leftButton.addEventListener("click", (e) => {
+            let current = content.querySelector("[active]");
+            let previous = current.previousElementSibling;
+
+            if (previous) {
+                deselectCarouselItem(current);
+                selectCarouselItem(previous);
+            }
+        });
     });
 });

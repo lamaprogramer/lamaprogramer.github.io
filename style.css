@@ -22,10 +22,6 @@
     border: none;
 }
 
-.colored {
-    --theme-color: hsl(300, 58%, 54%);
-}
-
 .fa-moon {
     color: rgb(206, 70, 206);
 }
@@ -40,6 +36,12 @@
     width: 100%;
 }
 
+.carousel-content {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .carousel-item:not([active]), .carousel-item:not([background]) {
     display: none;
 }
@@ -48,10 +50,47 @@
     display: block;
 }
 
-.carousel-item[background] {
-    display: block;
-    opacity: 75%;
-    scale: 75%;
+@media (max-width: 1024px) {
+    .carousel-item[active] {
+        width: 90%;
+    }
+    
+    .carousel-scroll-left, .carousel-scroll-right {
+        display: block;
+        margin: auto;
+        border-radius: 100%;
+        aspect-ratio: 1/1;
+        width: 10%;
+    }
+
+    .carousel {
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel-item[active] {
+        width: 33%;
+    }
+
+    .carousel-item[background] {
+        display: block;
+        width: 33%;
+        opacity: 75%;
+        scale: 80%;
+    }
+
+    .carousel-item[active]:last-child {
+        margin-right: auto;
+    }
+    
+    .carousel-item[active]:first-child {
+        margin-left: auto;
+    }
+
+    .carousel-scroll-left, .carousel-scroll-right {
+        display: none;
+    }
 }
 
 #nav {
