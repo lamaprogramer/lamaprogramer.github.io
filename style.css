@@ -39,7 +39,7 @@
 .carousel-content {
     display: inline-flex;
     justify-content: center;
-    width: 100%;
+    vertical-align: top;
 }
 
 .carousel-item:not([active]), .carousel-item:not([background]) {
@@ -50,7 +50,7 @@
     display: block;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .carousel-item[active] {
         width: 90%;
     }
@@ -70,14 +70,25 @@
 
 @media (min-width: 1024px) {
     .carousel-item[active] {
-        width: 33%;
+        width: 33.33%;
     }
 
     .carousel-item[background] {
-        display: block;
-        width: 33%;
-        opacity: 75%;
-        scale: 80%;
+        display: inline-block;
+        margin-bottom: auto;
+        margin-top: 5%;
+        width: 33.33%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 2%;
+        height: auto;
+        opacity: 100%;
+
+        mask-image: linear-gradient(black, transparent);
+    }
+
+    .carousel-item[background] > * {
+        margin-top: 0;
     }
 
     .carousel-item[active]:last-child {
@@ -96,7 +107,6 @@
 #nav {
     display: flex;
     align-items: center;
-    /* border-bottom: 1px solid grey; */
     box-shadow: var(--bulma-shadow);
 }
 
