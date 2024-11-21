@@ -13,10 +13,10 @@ function deselectCarouselItem(item) {
     if (next) item.nextElementSibling.removeAttribute("carousel-background");
 }
 
-function selectCarouselItem(item) {
+function selectCarouselItem(item, shouldFocus) {
     item.setAttribute("carousel-active", true);
     item.setAttribute("tabindex", 0);
-    item.focus();
+    if (shouldFocus) item.focus();
 
     let previous = item.previousElementSibling;
     let next = item.nextElementSibling;
@@ -30,7 +30,7 @@ function selectPreviousCarouselItem(currentItem) {
 
     if (previous) {
         deselectCarouselItem(currentItem);
-        selectCarouselItem(previous);
+        selectCarouselItem(previous, document.hasFocus());
     }
 }
 
@@ -39,7 +39,7 @@ function selectNextCarouselItem(currentItem) {
 
     if (next) {
         deselectCarouselItem(currentItem);
-        selectCarouselItem(next);
+        selectCarouselItem(next, document.hasFocus());
     }
 }
 
@@ -59,7 +59,7 @@ window.addEventListener("load", (e) => {
 
                 if (currentItem) {
                     deselectCarouselItem(currentItem);
-                    selectCarouselItem(item);
+                    selectCarouselItem(item, document.hasFocus());
                 }
             });
 
@@ -85,6 +85,6 @@ window.addEventListener("load", (e) => {
             selectPreviousCarouselItem(content.querySelector("[carousel-active]"));
         });
 
-        selectCarouselItem(items[0]);
+        selectCarouselItem(items[0], false);
     });
 });
