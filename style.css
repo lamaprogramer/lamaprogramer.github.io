@@ -2,10 +2,6 @@
     --button-sun-h: 44deg;
     --button-sun-s: 58%;
     --button-sun-l: 54%;
-
-    --color-accent-primary: red;
-    --color-accent-secondary: orange;
-    --color-accent-third: yellow;
 }
 
 [data-theme=dark],
@@ -20,19 +16,9 @@
     --bulma-text-l: 76%; 	
     --bulma-text-strong-l: 98%; 	
     --bulma-text-title-l: 100%;
-
-    --color-accent-primary: purple;
-    --color-accent-secondary: blue;
-    --color-accent-third: green;
 }
 
-[data-theme=dark] body {
-    background-image: url("./assets/images/background.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-html:not([data-theme=dark]) body {
+body {
     background-image: url("./assets/images/background.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -62,6 +48,8 @@ html:not([data-theme=dark]) body {
 }
 
 .icon-button {
+    background: transparent;
+    box-shadow: none;
     border: none;
 }
 
@@ -75,7 +63,6 @@ html:not([data-theme=dark]) body {
 
 #nav {
     display: flex;
-    align-items: center;
     box-shadow: var(--bulma-shadow);
 }
 
@@ -94,8 +81,4 @@ html:not([data-theme=dark]) body {
 
 #right-nav > * {
     margin-left: 1em;
-}
-
-#about-me-header {
-    text-align: center;
 }
