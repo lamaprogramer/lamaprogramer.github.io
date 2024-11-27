@@ -6,6 +6,7 @@
 .card.frosted, #nav.frosted, .dropdown-content.frosted {
     background-color: hsl(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), var(--frosted-transparency));
     backdrop-filter: blur(var(--frosted-blur-strength)) saturate(200%);
+    -webkit-backdrop-filter: blur(var(--frosted-blur-strength)) saturate(200%);
 }
 
 .button.frosted {
@@ -17,4 +18,5 @@
     ); 
 
     backdrop-filter: blur(var(--frosted-blur-strength)) saturate(200%);
+    -webkit-backdrop-filter: blur(var(--frosted-blur-strength)) saturate(200%);
 }
