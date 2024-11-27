@@ -27,13 +27,13 @@
 }
 
 [data-theme=dark] body {
-    background-image: url("./assets/images/dark-background.png");
+    background-image: url("./assets/images/background.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 html:not([data-theme=dark]) body {
-    background-image: url("./assets/images/light-background.png");
+    background-image: url("./assets/images/background.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
