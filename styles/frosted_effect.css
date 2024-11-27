@@ -1,0 +1,20 @@
+:root {
+    --frosted-transparency: 0.8;
+    --frosted-blur-strength: 200px;
+}
+
+.card.frosted, #nav.frosted, .dropdown-content.frosted {
+    background-color: hsl(var(--bulma-scheme-h), var(--bulma-scheme-s), var(--bulma-scheme-main-l), var(--frosted-transparency));
+    backdrop-filter: blur(var(--frosted-blur-strength)) saturate(200%);
+}
+
+.button.frosted {
+    background-color: hsl(
+        var(--bulma-button-h), 
+        var(--bulma-button-s), 
+        calc(var(--bulma-button-background-l) + var(--bulma-button-background-l-delta)),
+        var(--frosted-transparency)
+    ); 
+
+    backdrop-filter: blur(var(--frosted-blur-strength)) saturate(200%);
+}

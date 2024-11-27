@@ -5,24 +5,32 @@ function findCurrentCarouselItem(item) {
 function deselectCarouselItem(item) {
     item.removeAttribute("carousel-active");
     item.setAttribute("tabindex", -1);
+    item.querySelectorAll(".carousel-item *").forEach((child) => {
+        child.setAttribute("tabindex", -1);
+    });
 
     let previous = item.previousElementSibling;
     let next = item.nextElementSibling;
 
-    if (previous) item.previousElementSibling.removeAttribute("carousel-background");
-    if (next) item.nextElementSibling.removeAttribute("carousel-background");
+    if (previous) previous.removeAttribute("carousel-background");
+    if (next) next.removeAttribute("carousel-background");
+    
 }
 
 function selectCarouselItem(item, shouldFocus) {
     item.setAttribute("carousel-active", true);
     item.setAttribute("tabindex", 0);
+    item.querySelectorAll(".carousel-item *").forEach((child) => {
+        child.setAttribute("tabindex", 0);
+    });
     if (shouldFocus) item.focus();
 
     let previous = item.previousElementSibling;
     let next = item.nextElementSibling;
 
-    if (previous) item.previousElementSibling.setAttribute("carousel-background", true);
-    if (next) item.nextElementSibling.setAttribute("carousel-background", true);
+    if (previous) previous.setAttribute("carousel-background", true);
+    if (next) next.setAttribute("carousel-background", true);
+    
 }
 
 function selectPreviousCarouselItem(currentItem) {

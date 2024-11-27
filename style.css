@@ -2,6 +2,10 @@
     --button-sun-h: 44deg;
     --button-sun-s: 58%;
     --button-sun-l: 54%;
+
+    --color-accent-primary: red;
+    --color-accent-secondary: orange;
+    --color-accent-third: yellow;
 }
 
 [data-theme=dark],
@@ -16,6 +20,45 @@
     --bulma-text-l: 76%; 	
     --bulma-text-strong-l: 98%; 	
     --bulma-text-title-l: 100%;
+
+    --color-accent-primary: purple;
+    --color-accent-secondary: blue;
+    --color-accent-third: green;
+}
+
+[data-theme=dark] body {
+    background-image: url("./assets/images/dark-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html:not([data-theme=dark]) body {
+    background-image: url("./assets/images/light-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.circle {
+    position: absolute;
+    background-color: var(--color-accent-primary);
+    border-radius: 100%;
+}
+
+.large.circle {
+    aspect-ratio: 1/1;
+    width: 50%;
+    height: auto;
+}
+
+.small.circle {
+    aspect-ratio: 1/1;
+    width: 15%;
+    height: auto;
+}
+
+.bottom-right.circle {
+    bottom: 0;
+    right: 0;
 }
 
 .icon-button {
