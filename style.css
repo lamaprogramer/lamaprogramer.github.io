@@ -6,7 +6,10 @@
 
 [data-theme=dark],
 .theme-dark {
-    --bulma-scheme-main-l: 16%;
+    --bulma-scheme-h: 217;
+    --bulma-scheme-s: 20%;
+
+    /* --bulma-scheme-main-l: 16%;
     --bulma-scheme-main-bis-l: 18% 	
     --bulma-scheme-main-ter-l: 20%; 	
     --bulma-background-l: 19%; 	
@@ -15,11 +18,16 @@
     --bulma-text-weak-l: 58%; 	
     --bulma-text-l: 76%; 	
     --bulma-text-strong-l: 98%; 	
-    --bulma-text-title-l: 100%;
+    --bulma-text-title-l: 100%; */
+
+    /* --bulma-shadow-h: var(--bulma-scheme-h);
+    --bulma-shadow-s: var(--bulma-scheme-s);
+    --bulma-shadow-l: var(--bulma-border-l); */
+
 }
 
 body {
-    background-image: url("./assets/images/background.svg");
+    background-image: url("./assets/images/light-background.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
