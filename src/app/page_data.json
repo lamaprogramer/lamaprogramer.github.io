@@ -1,0 +1,99 @@
+{
+  "skills": {
+    "programming_languages": [
+      {
+        "icon": "fa-3x devicon-java-plain",
+        "title": "Java"
+      },
+      {
+        "icon": "fa-3x devicon-cplusplus-plain",
+        "title": "C++"
+      },
+      {
+        "icon": "fa-3x devicon-python-plain",
+        "title": "Python"
+      },
+      {
+        "icon": "fa-3x devicon-javascript-plain",
+        "title": "JavaScript"
+      }
+    ],
+    "web_technology": [
+      {
+        "icon": "fa-3x devicon-nextjs-plain",
+        "title": "Next JS"
+      },
+      {
+        "icon": "fa-3x devicon-react-plain",
+        "title": "React JS"
+      },
+      {
+        "icon": "fa-3x devicon-html5-plain",
+        "title": "HTML"
+      },
+      {
+        "icon": "fa-3x devicon-css3-plain",
+        "title": "CSS"
+      },
+      {
+        "icon": "fa-3x devicon-bulma-plain",
+        "title": "Bulma CSS"
+      },
+      {
+        "icon": "fa-3x devicon-bootstrap-plain",
+        "title": "Bootstrap CSS"
+      },
+      {
+        "icon": "fa-3x devicon-django-plain",
+        "title": "Django"
+      }
+    ],
+    "rendering": [
+      {
+        "icon": "fa-3x devicon-opengl-plain",
+        "title": "OpenGL"
+      },
+      {
+        "icon": "fa-3x devicon-vulkan-plain",
+        "title": "Vulkan"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Toggle Item Frames",
+      "src": "https://github.com/lamaprogramer/ToggleableItemFrames",
+      "languages": ["Java", "Gradle"],
+      "frameworks": ["Fabric Mod Loader"],
+      "description": "A mod for the game Minecaft that allows players to toggle the visibility of item frames."
+    },
+    {
+      "title": "Image To World",
+      "src": "https://github.com/lamaprogramer/ImageToWorld",
+      "languages": ["Java", "Gradle"],
+      "frameworks": ["GSON", "Fabric Mod Loader"],
+      "description": "A mod for the game Minecaft that uses in-game commands to paste images into the world in the form of blocks, allowing for easy map art and heightmaps."
+    },
+    {
+      "title": "Vulkan Voxel Engine",
+      "src": "https://github.com/lamaprogramer/VulcanVoxelEngine",
+      "languages": ["C++"],
+      "frameworks": ["Vulkan", "Fabric Mod Loader"],
+      "description": "A basic vulkan renderer that renders textured cubes using a batch rendering implimentation."
+    },
+    {
+      "title": "Minecraft Wiki",
+      "src": "https://github.com/lamaprogramer/MinecraftDatabaseApp",
+      "languages": ["Python", "JavaScript", "HTML", "CSS"],
+      "frameworks": ["DJango", "Materialize CSS"],
+      "description": "A fullstack application for search up in-game properties of items, blocks, and mobs from the game Minecraft."
+    },
+    {
+      "title": "Portfolio Site",
+      "src": "https://github.com/lamaprogramer/lamaprogramer.github.io",
+      "languages": ["JavaScript", "HTML", "CSS"],
+      "frameworks": ["NextJS", "Bulma CSS", "FontAwesome"],
+      "description": "A static site to describe myself, my accomplishments, and my projects."
+    }
+  ]
+}
