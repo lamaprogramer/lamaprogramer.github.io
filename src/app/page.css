@@ -1,0 +1,9 @@
+.site-section {
+  position: relative;
+  z-index: 1
+}
+
+.tech-name {
+  margin-bottom: 0;
+  margin-left: var(--site-margin);
+}

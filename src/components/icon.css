@@ -1,0 +1,7 @@
+span.flex-icon {
+  display: flex;
+  color: var(--bs-body-color);
+  justify-content: center;
+  align-items: center;
+  margin: 0.1em;
+}

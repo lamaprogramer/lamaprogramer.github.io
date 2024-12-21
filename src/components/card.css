@@ -1,0 +1,8 @@
+.card-header {
+  display: grid;
+}
+
+.card-header .centered {
+  display: flex;
+  justify-self: center;
+}

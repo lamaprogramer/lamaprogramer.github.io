@@ -1,16 +1,18 @@
 import { Card, CardContent, CardHeader, CardImage } from "@/components/card";
 import { Grid, GridCell } from "@/components/grid";
-import { Carousel, CarouselItem } from "@/components/carousel";
 import Icon from "@/components/icon";
 
 import PageData from "./page_data.json"
+import "./page.css"
 
 function SkillCard({ iconData, children }) {
   return (
     <Card className="frosted">
       <CardHeader>
-        <Icon size="is-medium" iconData={iconData} className="tech-icon"></Icon>
-        <p className="card-header-title is-size-4">{children}</p>
+        <div className="hstack">
+          <Icon iconData={iconData} className="tech-icon"></Icon>
+          <p className="tech-name fw-bold">{children}</p>
+        </div>
       </CardHeader>
     </Card>
   )
@@ -18,16 +20,13 @@ function SkillCard({ iconData, children }) {
 
 function ProjectCard({ title, src, languages, frameworks, description }) {
   return (
-    <Card>
+    <Card className="project-card frosted">
       <CardHeader>
-        <a className="card-header-title is-size-3" href={src}>
-          {title}
-        </a>
+        <h2 className="fw-bold">{title}</h2>
       </CardHeader>
       <CardContent>
-        <p><b>Language(s):</b></p>
-        <p>{languages.join(", ")}</p>
-
+        <p><b>Source:</b> {src}</p>
+        <p><b>Language(s):</b> {languages.join(", ")}</p>
         <p><b>Frameworks, Libraries, & APIs:</b> {frameworks.join(", ")}</p>
         <p>{description}</p>
       </CardContent>
@@ -37,22 +36,22 @@ function ProjectCard({ title, src, languages, frameworks, description }) {
 
 function SiteSection({ children }) {
   return (
-    <section className="section is-small">
-      <div className="columns">
-        <div className="column"></div>
-        <div className="column is-two-thirds">
+    <section className="container my-5 site-section">
+      <div className="row align-items-center">
+        <div className="col"></div>
+        <div className="col-10">
           {children}
         </div>
-        <div className="column"></div>
+        <div className="col"></div>
       </div>
     </section>
   )
 }
 
 function processSkills(name) {
-  let skillCards = []
+  let skillCards = [];
 
-  for (let skill of PageData["skills"][name]) {
+  for (const skill of PageData["skills"][name]) {
     skillCards.push((
       <GridCell key={skill.title}>
         <SkillCard iconData={skill.icon}>{skill.title}</SkillCard>
@@ -63,19 +62,19 @@ function processSkills(name) {
 }
 
 function processProjects() {
-  let projectCards = []
+  let projectCards = [];
 
-  for (let project of PageData["projects"]) {
+  for (const project of PageData["projects"]) {
     projectCards.push((
-      <CarouselItem key={project.title}>
-        <ProjectCard 
+      <GridCell key={project.title} width={{xxl: 4, lg: 6, md: 12}}>
+        <ProjectCard
           title={project.title}
           src={project.src}
           languages={project.languages}
           frameworks={project.frameworks}
           description={project.description}
         />
-      </CarouselItem>
+      </GridCell>
     ))
   }
   return projectCards;
@@ -87,16 +86,16 @@ export default function Home() {
       <SiteSection>
         <Card className="frosted">
           <CardHeader>
-            <p className="card-header-title is-centered is-size-2">About Me</p>
+            <h1 className="centered fw-bold">About Me</h1>
           </CardHeader>
           <CardContent>
-            <div className="columns">
-              <div className="column">
+            <div className="row">
+              <div className="col-md-6 col-sm-12">
                 <Card className="frosted">
                   <CardImage src="/full_body.png" alt="Full body photo of myself." />
                 </Card>
               </div>
-              <div className="column">
+              <div className="col-md-6 col-sm-12">
                 <Card className="frosted">
                   <CardContent>
                     <p className="is-size-4">
@@ -113,21 +112,21 @@ export default function Home() {
       <SiteSection>
         <Card className="frosted">
           <CardHeader>
-            <p className="card-header-title is-centered is-size-1">Skills</p>
+            <h1 className="centered fw-bold">Skills</h1>
           </CardHeader>
           <CardContent>
-            <h1 className="title is-size-3" id="my-skills-header">Programming Languages</h1>
-            <Grid columnMin={12}>
+            <h1 className="pt-3">Programming Languages</h1>
+            <Grid>
               {processSkills("programming_languages")}
             </Grid>
 
-            <h1 className="title is-size-3" id="my-skills-header">Web Technology</h1>
-            <Grid columnMin={12}>
+            <h1 className="pt-3">Web Technology</h1>
+            <Grid>
               {processSkills("web_technology")}
             </Grid>
 
-            <h1 className="title is-size-3" id="my-skills-header">Rendering</h1>
-            <Grid columnMin={12}>
+            <h1 className="pt-3">Rendering</h1>
+            <Grid>
               {processSkills("rendering")}
             </Grid>
           </CardContent>
@@ -136,12 +135,12 @@ export default function Home() {
       <SiteSection>
         <Card className="frosted">
           <CardHeader>
-            <p className="card-header-title is-centered is-size-1">Portfolio</p>
+            <h1 className="centered fw-bold">Portfolio</h1>
           </CardHeader>
           <CardContent>
-            <Carousel>
+            <Grid>
               {processProjects()}
-            </Carousel>
+            </Grid>
           </CardContent>
         </Card>
       </SiteSection>

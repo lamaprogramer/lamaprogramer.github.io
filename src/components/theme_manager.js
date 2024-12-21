@@ -1,8 +1,10 @@
 "use client"
 
 import { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "./theme_context";
+import { createContext } from "react";
 import IconButton from "./icon_button";
+
+const ThemeContext = createContext();
 
 function getSystemTheme() {
   return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark" : "light";
@@ -32,7 +34,7 @@ export function HTML({ lang, children }) {
   }, [])
 
   return (
-    <html lang={lang} data-theme={theme}>
+    <html lang={lang} data-bs-theme={theme}>
       <ThemeContext.Provider value={[theme, setTheme]}>
         {children}
       </ThemeContext.Provider>

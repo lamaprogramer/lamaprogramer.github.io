@@ -1,31 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
-
-import { Dropdown, DropdownItem } from "@/components/dropdown";
-import Icon from "@/components/icon";
-import IconButton from "@/components/icon_button";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "react-bootstrap";
+import { MinimalIconToggle } from "@/components/dropdown_extensions";
 import { ThemeControl, HTML } from "@/components/theme_manager";
+import IconButton from "@/components/icon_button";
+import Icon from "@/components/icon";
 
-import "bulma/css/bulma.css"
+import "bootstrap/dist/css/bootstrap.css"
 import "@/fontawesome/css/fontawesome.css"
 import "@/fontawesome/css/brands.css"
 import "@/fontawesome/css/solid.css"
-
-import "./root.css"
-import "./glassmorphism.css"
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "@/styles/glassmorphism.css"
+import "./layout.css"
 
 export const metadata = {
   title: "Portfolio",
-  description: "William's Portfolio'",
+  description: "William's Portfolio",
 };
 
 export default function RootLayout({ children }) {
@@ -34,27 +22,23 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <header className="frosted p-5" id="nav">
-          <div id="left-nav">
-            <IconButton size="is-medium" iconData="fas fa-2x fa fa-bars" />
-            <h1 className="title">William Allen Kinsey Jr.</h1>
+      <body>
+        <header className="site-nav border-bottom frosted">
+          <div className="nav-left">
+            <IconButton iconData="fas fa-2x fa fa-bars" />
+            <h1 className="fw-bold">William Allen Kinsey Jr.</h1>
           </div>
-          <div id="right-nav">
-            <Dropdown iconData="fas fa-2x fa fa-sun">
-              <DropdownItem>
-                <ThemeControl iconData="fa fa-sun" className="is-fullwidth" themeName="light">Light</ThemeControl>
-              </DropdownItem>
-              <DropdownItem>
-                <ThemeControl iconData="fa fa-moon" className="is-fullwidth" themeName="dark">Dark</ThemeControl>
-              </DropdownItem>
-              <DropdownItem>
-                <ThemeControl iconData="fa fa-computer" className="is-fullwidth" themeName="system">System</ThemeControl>
-              </DropdownItem>
+          <div className="nav-right">
+            <Dropdown drop='down-centered'>
+              <DropdownToggle iconData="fas fa-2x fa fa-sun" as={MinimalIconToggle}></DropdownToggle>
+              <DropdownMenu className="frosted">
+                <DropdownItem as={ThemeControl} iconData="fa fa-sun" themeName="light">Light</DropdownItem>
+                <DropdownItem as={ThemeControl} iconData="fa fa-moon" themeName="dark">Dark</DropdownItem>
+                <DropdownItem as={ThemeControl} iconData="fa fa-computer" themeName="system">System</DropdownItem>
+              </DropdownMenu>
             </Dropdown>
-
             <a className="button icon-button" href="https://github.com/lamaprogramer" target="_blank">
-              <Icon size="is-medium" iconData="fas fa-2x fa-brands fa-github" />
+              <Icon iconData="fas fa-2x fa-brands fa-github" />
             </a>
           </div>
         </header>

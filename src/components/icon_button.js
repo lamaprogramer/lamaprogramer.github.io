@@ -1,12 +1,22 @@
+import "./icon_button.css"
 import Icon from "./icon.js"
 
-export default function IconButton({size, iconData, onClick, className, children}) {
+export default function IconButton({
+  size,
+  iconData,
+  iconStyle,
+  buttonStyle,
+  onClick,
+  disabled,
+  className,
+  children
+}) {
   let defaultClasses = ["button", "icon-button", className].join(" ");
 
   return (
-    <button className={defaultClasses} onClick={onClick} aria-haspopup="true" aria-controls="theme-dropdown">
-      <span>{children}</span>
-      <Icon size={size} iconData={iconData} />
+    <button disabled={disabled} onClick={onClick} className={defaultClasses} style={buttonStyle} aria-haspopup="true" aria-controls="theme-dropdown">
+      <span className="me-2">{children}</span>
+      <Icon size={size} iconData={iconData} style={iconStyle}/>
     </button>
   )
 }

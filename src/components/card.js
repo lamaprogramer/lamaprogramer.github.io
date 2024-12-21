@@ -1,35 +1,32 @@
+import "./card.css"
+
 export function CardHeader({ children }) {
   return (
-    <header className="card-header">
+    <div className="card-header">
       {children}
-    </header>
+    </div>
   )
 }
 
 export function CardContent({ children }) {
   return (
-    <div className="card-content">
-      <div className="content">
-        {children}
-      </div>
+    <div className="card-body">
+      {children}
     </div>
   )
 }
 
 export function CardImage({ src, alt }) {
   return (
-    <div className="card-image">
-      <figure className="image">
-      {/* <Image id="fullbody" src={src} alt={alt}/> */}
-        <img id="fullbody" src={src} alt={alt} />
-      </figure>
-    </div>
+    <img src={src} alt={alt} className="card-img-top"/>
   )
 }
 
 export function Card({ className, children }) {
+  let defaultClasses = ["card", "my-2", className].join(" ");
+
   return (
-    <div className={"card " + className}>
+    <div className={defaultClasses}>
       {children}
     </div>
   )

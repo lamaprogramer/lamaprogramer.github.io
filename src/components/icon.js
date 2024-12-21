@@ -1,9 +1,11 @@
-export default function Icon({ size, className, iconData }) {
-  let defaultClasses = ["icon", size, className].join(" ");
+import "./icon.css"
+
+export default function Icon({ size, iconData, style, className }) {
+  let defaultClasses = ["flex-icon", size, className].join(" ");
 
   return (
     <span className={defaultClasses}>
-      <i className={iconData} id="theme-indicator"></i>
+      <i style={style} className={iconData} id="theme-indicator"></i>
     </span>
   )
 }
