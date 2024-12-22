@@ -38,11 +38,9 @@ function SiteSection({ children }) {
   return (
     <section className="container my-5 site-section">
       <div className="row align-items-center">
-        <div className="col"></div>
-        <div className="col-10">
+        <div className="col-12">
           {children}
         </div>
-        <div className="col"></div>
       </div>
     </section>
   )

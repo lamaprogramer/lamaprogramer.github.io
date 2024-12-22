@@ -1,4 +1,5 @@
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "react-bootstrap";
+import { SideNav, SideNavMenu, SideNavMenuItem, SideNavTrigger } from "@/components/side_nav";
 import { MinimalIconToggle } from "@/components/dropdown_extensions";
 import { ThemeControl, HTML } from "@/components/theme_manager";
 import IconButton from "@/components/icon_button";
@@ -25,7 +26,16 @@ export default function RootLayout({ children }) {
       <body>
         <header className="site-nav border-bottom frosted">
           <div className="nav-left">
-            <IconButton iconData="fas fa-2x fa fa-bars" />
+            {/* <IconButton iconData="fas fa-2x fa fa-bars" /> */}
+            <SideNav>
+              <SideNavTrigger iconData="fas fa-2x fa fa-bars"></SideNavTrigger>
+              <SideNavMenu className="frosted">
+                <SideNavMenuItem iconData="fas fa-2x fa fa-arrow-right" className="frosted">Home</SideNavMenuItem>
+                <SideNavMenuItem iconData="fas fa-2x fa fa-arrow-right" className="frosted">Resume</SideNavMenuItem>
+                <SideNavMenuItem iconData="fas fa-2x fa fa-arrow-right" className="frosted">Blog</SideNavMenuItem>
+              </SideNavMenu>
+            </SideNav>
+
             <h1 className="fw-bold">William Allen Kinsey Jr.</h1>
           </div>
           <div className="nav-right">

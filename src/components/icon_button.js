@@ -15,7 +15,7 @@ export default function IconButton({
 
   return (
     <button disabled={disabled} onClick={onClick} className={defaultClasses} style={buttonStyle} aria-haspopup="true" aria-controls="theme-dropdown">
-      <span className="me-2">{children}</span>
+      {children && <span className="me-2">{children}</span>}
       <Icon size={size} iconData={iconData} style={iconStyle}/>
     </button>
   )
